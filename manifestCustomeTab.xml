@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>117a5db1-122a-4844-bb5b-005dd52adc99</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="X-Refresh"/>
+  <Description DefaultValue="A template to get started."/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <AppDomains>
+    <AppDomain>https://localhost:3000</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="ShareTime">
+              <Group id="CommandsGroup">
+                  <Label resid="CommandsGroup.Label"/>
+                  <Icon>
+                      <bt:Image size="16" resid="Icon.16x16"/>
+                      <bt:Image size="32" resid="Icon.32x32"/>
+                      <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Control xsi:type="Button" id="TaskpaneButton">
+                      <Label resid="TaskpaneButton.Label" />
+                      <Supertip>
+                          <!-- ToolTip title. resid must point to a ShortString resource. -->
+                          <Title resid="TaskpaneButton.Label" />
+                          <!-- ToolTip description. resid must point to a LongString resource. -->
+                          <Description resid="TaskpaneButton.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                          <bt:Image size="16" resid="Icon.16x16"/>
+                          <bt:Image size="32" resid="Icon.32x32"/>
+                          <bt:Image size="80" resid="Icon.80x80"/>
+                      </Icon>
+                      <!-- This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFunction or ShowTaskpane. -->
+                      <Action xsi:type="ExecuteFunction">
+                          <FunctionName>btnloginservice</FunctionName>
+                      </Action>
+                  </Control>
+                  <Control xsi:type="Button" id="BtnLogoutService">
+                      <Label resid="BtnLogoutService.Label" />
+                      <Supertip>
+                          <!-- ToolTip title. resid must point to a ShortString resource. -->
+                          <Title resid="BtnLogoutService.Label" />
+                          <!-- ToolTip description. resid must point to a LongString resource. -->
+                          <Description resid="BtnLogoutService.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                          <bt:Image size="16" resid="Icon.16x16"/>
+                          <bt:Image size="32" resid="Icon.32x32"/>
+                          <bt:Image size="80" resid="Icon.80x80"/>
+                      </Icon>
+                      <!-- This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFunction or ShowTaskpane. -->
+                      <Action xsi:type="ExecuteFunction">
+                          <FunctionName>btnlogoutservice</FunctionName>
+                      </Action>
+                      <Enabled>false</Enabled>
+                  </Control>
+                  <Control xsi:type="Button" id="BtnHomeService">
+                      <Label resid="BtnHomeService.Label" />
+                      <Supertip>
+                          <!-- ToolTip title. resid must point to a ShortString resource. -->
+                          <Title resid="BtnHomeService.Label" />
+                          <!-- ToolTip description. resid must point to a LongString resource. -->
+                          <Description resid="BtnHomeService.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                          <bt:Image size="16" resid="Icon.16x16"/>
+                          <bt:Image size="32" resid="Icon.32x32"/>
+                          <bt:Image size="80" resid="Icon.80x80"/>
+                      </Icon>
+                      <!-- This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFunction or ShowTaskpane. -->
+                      <Action xsi:type="ExecuteFunction">
+                          <FunctionName>btnhomeservice</FunctionName>
+                      </Action>
+                      <Enabled>false</Enabled>
+                  </Control>                          
+              </Group>
+              <Label resid="CommandsGroup.Label" />
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="NT Services"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Sign In"/>
+        <bt:String id="BtnLogoutService.Label" DefaultValue="Sign Out"/>
+        <bt:String id="BtnHomeService.Label" DefaultValue="Home"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Sign In"/>
+        <bt:String id="BtnLogoutService.Tooltip" DefaultValue="Click to Sign Out"/>
+        <bt:String id="BtnHomeService.Tooltip" DefaultValue="Click to Show a Taskpane"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
